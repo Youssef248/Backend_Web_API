@@ -44,7 +44,7 @@ router.patch('/update/:id',(req,res,next)=>{
     });
 });
 
-router.delete('/delete/;id',(req,res,next)=>{
+router.delete('/delete/:id',(req,res,next)=>{
     const id = req.params.id;
     var query="delete from product where id=?";
     connection.query(query,[id],(err,results)=>{
@@ -52,8 +52,11 @@ router.delete('/delete/;id',(req,res,next)=>{
             if(results.affectedRows == 0){
                 return res.status(404).json({message:"Product id does not exist"});
             }
+            return res.status(200).json({message:"Product deleted successfully"});
+        }else{
+            return res.status(500).json(err);
         }
-    })
-})
+    });
+});
 
 module.exports = router;
