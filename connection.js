@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 var connection = mysql.createConnection({
-  // adjust root & password to your mysql credentials
+  // 1) adjust root & password to your mysql credentials
     port:3306,
     host:"localhost",
     user:"root",
@@ -14,9 +14,9 @@ connection.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
 
-  // Uncomment code below before running api for the first time to create the database & tables. 
+  // 2) Uncomment code below before running api for the first time to create the database & tables. 
 
-  // When done put it back in commentary, uncomment database:"crud" in createConnection() and run again
+  // 3) When done put it back in commentary, uncomment database:"crud" in createConnection() and run again
 
 /* 
   connection.query("CREATE DATABASE crud", function (err, result) {
