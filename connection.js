@@ -5,7 +5,7 @@ var connection = mysql.createConnection({
     host:"localhost",
     user:"root",
     password:"Password!321",
-    //database:"crud"
+    // database:"crud" 
 });
 
 
